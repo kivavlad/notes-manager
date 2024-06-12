@@ -1,30 +1,21 @@
-# React + TypeScript + Vite
+## React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Функционал приложения**:
+  - Отображение списка заметок.
+  - Добавление новой заметки через текстовое поле.
+  - Удаление заметки.
+  - Возможность отметить заметку как "выполнено".
+  - Фильтрация заметок по статусу (все, активные, выполненные).
 
-Currently, two official plugins are available:
+**Структура компонентов**:
+  - Компонент списка заметок.
+  - Компонент элемента списка заметок.
+  - Компонент фильтров.
+  - Компонент для создания новой заметки.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### **Дополнительные задания:**
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+1. Использование **`useReducer`** для управления состоянием приложения.
+2. Применение **`useContext`** для управления состояниями между компонентами без проп drilling.
+3. Реализация сохранения заметок в **`localStorage`** и их восстановление при перезагрузке страницы.
+4. Реализация анимаций для добавления и удаления заметок (можно использовать **`React Transition Group`** или аналогичные библиотеки).
