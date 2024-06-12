@@ -1,0 +1,53 @@
+body[data-theme='light'] {
+  --filter-bg: var(--gray-400);
+  --filter-color: var(--gray-200);
+}
+  
+body[data-theme='dark'] {
+  --filter-bg: var(--gray-50);
+  --filter-color: var(--white);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2rem;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--filter-color);
+}
+
+.options {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.button {
+  padding: 4px 8px;
+  color: var(--filter-color);
+}
+
+.button_active {
+  padding: 4px 8px;
+  border: 1px solid var(--filter-bg);
+  color: var(--filter-color);
+}
+
+@media screen and (max-width: 767px) {
+  .controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2rem;
+  }
+}

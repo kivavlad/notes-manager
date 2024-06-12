@@ -1,0 +1,36 @@
+body[data-theme='light'] {
+  --switcher-color: var(--gray-100);
+  --switcher-color-hover: var(--gray-300);
+}
+
+body[data-theme='dark'] {
+  --switcher-color: var(--white);
+  --switcher-color-hover: var(--gray-100);
+}
+
+.switcher {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+
+.switcher:hover span {
+  color: var(--switcher-color-hover);
+}
+
+.switcher:hover svg path{
+  fill: var(--switcher-color-hover);
+}
+
+.switcher > span {
+  color: var(--switcher-color);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+}
+
+.icon {
+  fill: var(--switcher-color);
+}

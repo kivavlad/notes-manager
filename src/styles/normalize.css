@@ -1,0 +1,66 @@
+@font-face {
+  font-display: swap; 
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/Jost-Regular.ttf'); 
+}
+
+@font-face {
+  font-display: swap; 
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../assets/fonts/Jost-Medium.ttf');
+}
+
+@font-face {
+  font-display: swap; 
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../assets/fonts/Jost-SemiBold.ttf');
+}
+
+:root {
+  /* Colors */
+  --main-color: #0079FF;
+  --main-color-hover: #60ABFF;
+  --white: #FFFFFF;
+
+  --gray-50: #F6F8FF;
+  --gray-100: #697C9A;
+  --gray-200: #4B6A9B;
+  --gray-300: #2B3442;
+  --gray-400: #1E2A47;
+  --gray-500: #141D2F;
+
+  --shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+}
+
+body {
+  font-family: 'Jost';
+  font-weight: 400;
+  background-color: var(--gray-50);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body[data-theme='dark'] {
+  background-color: var(--gray-500);
+}
+
+body::-webkit-scrollbar {
+  width: .3rem;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--gray-500);
+  height: 1rem;
+}
+
+body::-moz-progress-bar {
+  background-color: var(--gray-500);
+  width: .3rem;
+  height: 1rem;
+}
