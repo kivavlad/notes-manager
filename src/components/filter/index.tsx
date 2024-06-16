@@ -5,7 +5,7 @@ import styles from './style.module.css';
 interface IProps {
   total: number;
   filter: string;
-  setFilter: (arg: string) => void;
+  setFilter: (rapam: string) => void;
 }
 
 const Filter: React.FC<IProps> = ({total, filter, setFilter}) => {

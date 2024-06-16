@@ -1,4 +1,5 @@
 import {memo} from "react";
+import useStore from "../../hooks/use-store";
 import {INote} from "../../types/i-note";
 import styles from "./style.module.css";
 import CheckboxIcon from "../svg/checkbox";
@@ -7,15 +8,14 @@ import TrashIcon from "../svg/trash";
 
 interface IProps {
   item: INote;
-  onRemove: (param: INote) => void;
-  onToggle: (param: INote) => void;
 }
 
-const NoteCard: React.FC<IProps> = ({item, onRemove, onToggle}) => {
+const NoteCard: React.FC<IProps> = ({item}) => {
+  const {dispatch} = useStore();
 
   const callbacks = {
-    handleRemove: () => onRemove(item),
-    handleToggle: () => onToggle(item),
+    onRemove: () => dispatch({type: 'remove-note', payload: item}),
+    onToggle: () => dispatch({type: 'toggle-completed', payload: item}),
   }
 
   return (
@@ -24,10 +24,10 @@ const NoteCard: React.FC<IProps> = ({item, onRemove, onToggle}) => {
         {item.text}
       </div>
       <div className={styles.buttons}>
-        <button className={styles.btn} onClick={callbacks.handleToggle}>
+        <button className={styles.btn} onClick={callbacks.onToggle}>
           {item.completed ? <CheckboxIcon/> : <BoxIcon/>}
         </button>
-        <button className={styles.btn} onClick={callbacks.handleRemove}>
+        <button className={styles.btn} onClick={callbacks.onRemove}>
           <TrashIcon/>
         </button>
       </div>

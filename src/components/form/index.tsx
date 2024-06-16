@@ -1,26 +1,24 @@
 import {memo, useState, useEffect} from "react";
+import {genUUID} from "../../utils/utils";
+import useStore from "../../hooks/use-store";
 import styles from "./style.module.css";
 
-interface IProps {
-  value: string;
-  setValue: (param: string) => void;
-  onSubmit: () => void;
-}
-
-const Form: React.FC<IProps> = ({value, setValue, onSubmit}) => {
+const Form: React.FC = () => {
+  const {dispatch} = useStore();
+  const [value, setValue] = useState<string>('');
   const [active, setActive] = useState<boolean>(false);
-
-  useEffect(() => {
-    value.trim() ? setActive(true) : setActive(false);
-  }, [value])
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (value.trim()) {
-      onSubmit();
+      dispatch({type: 'add-note', payload: {id: genUUID(), text: value, completed: false}});
       setValue('');
     }
   }
+
+  useEffect(() => {
+    value.trim() ? setActive(true) : setActive(false);
+  }, [value])
 
   return (
     <form onSubmit={handleSubmit}>

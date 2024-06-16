@@ -12,9 +12,6 @@ const initialState: IState = {
 
 /**
  * Изменение состояния
- * @param state 
- * @param action 
- * @returns 
  */
 const reducer = (state: IState, action: IAction) => {
   switch (action.type) {
@@ -40,7 +37,7 @@ const reducer = (state: IState, action: IAction) => {
       })
       localStorage.setItem('notes', JSON.stringify(newStatusNotes));
       return {...state, notes: newStatusNotes};
-      
+
     default:
       return state;
   }
