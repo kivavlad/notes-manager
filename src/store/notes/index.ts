@@ -8,6 +8,7 @@ const storageNotes = localStorage.getItem('notes');
  */
 const initialState: IState = {
   notes: storageNotes ? JSON.parse(storageNotes) : [],
+  filter: 'all',
 }
 
 /**
@@ -37,6 +38,9 @@ const reducer = (state: IState, action: IAction) => {
       })
       localStorage.setItem('notes', JSON.stringify(newStatusNotes));
       return {...state, notes: newStatusNotes};
+    
+    case 'change-filter':
+      return {...state, filter: action.filter}
 
     default:
       return state;
