@@ -1,7 +1,7 @@
 import {INote} from "./i-note";
 
-export interface IAction {
-  type: 'add-note' | 'remove-note' | 'toggle-completed' | 'change-filter';
-  payload?: INote | any;
-  filter?: 'all' | 'active' | 'completed';
-}
+export type IAction =
+  | {type: 'add-note', payload: INote}
+  | {type: 'remove-note', payload: INote}
+  | {type: 'toggle-completed', payload: INote}
+  | {type: 'change-filter', payload:  'all' | 'active' | 'completed'}

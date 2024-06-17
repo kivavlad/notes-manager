@@ -40,7 +40,7 @@ const reducer = (state: IState, action: IAction) => {
       return {...state, notes: newStatusNotes};
     
     case 'change-filter':
-      return {...state, filter: action.filter}
+      return {...state, filter: action.payload}
 
     default:
       return state;
